@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История о том, как март потерял власть</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f0f14;
+            --text: #e8e6e3;
+            --accent: #c8a75d;
+            --muted: #9c9a95;
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Ubuntu, "Helvetica Neue",
+                Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Фоновая текстура */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(200, 167, 93, 0.08), transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.03), transparent 60%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-top: 120px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 30px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--muted);
+        }
+
+        blockquote {
+            margin: 40px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .divider {
+            margin: 120px 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            opacity: 0.4;
+        }
+
+        /* Лёгкая анимация появления */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .months li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        button {
+            background: none;
+            border: 1px solid rgba(200, 167, 93, 0.4);
+            color: var(--accent);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .months button:hover {
+            background: var(--accent);
+            color: black;
+        }
+
+        .latin {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            letter-spacing: 0.5px;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .image {
+            width: 200px;
+            aspect-ratio: 3 / 4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="fade-in">История о том, как март потерял власть</h1>
+
+        <p class="fade-in">
+            Когда Рим был ещё молод, шумен и пах навозом, год начинался в марте, потому что так можно жить.
+        </p>
+
+        <p class="fade-in">
+            Зима — мёртвое время. Поля спят. Дороги размыты. Войска сидят по домам и чинят сандалии. А вот в марте всё
+            просыпается: земля, люди, амбиции. Не случайно март назвали в честь Марса — бога войны и отца римского
+            народа. В марте начинались походы, выборы, сделки и драки за власть. Год стартовал с удара щита.
+        </p>
+
+        <p class="fade-in">
+            Первый римский календарь имел <strong>10 месяцев</strong>.
+            Он начинался мартом и заканчивался декабрём.
+            Дальше была безымянная зима — её просто не считали.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2 class="fade-in">Нума и добавленные месяцы</h2>
+
+        <img src="img/Numa_Pompilius.jpg" alt="Портрет Нумы Помпилия на аверсе монеты" style="width:200px;">
+
+        <p class="fade-in">
+            И вот тут появляется Нума Помпилий — легендарный царь-философ. Он посмотрел на этот календарь и сказал
+            примерно следующее: «Ребята, вы что, совсем зиму игнорируете?» И добавил два месяца в конец года —
+            <strong> Январь </strong> в честь бога Януса двуликого и <strong> Февраль </strong> в честь
+            бога Фебрууса (бога
+            очищения для очистительного финала). Кстати поэтому февраль стал коротким. Это была вставка в конец года
+            чтобы подкорректировать длину года.
+        </p>
+
+        <p class="fade-in">
+            Но важно: <strong>началом года всё ещё оставался март</strong>.
+            Январь и февраль были чем-то вроде подготовки к сезону.
+            Там выплачивали старые долги, приносили очистительные жертвы и готовились к настоящей жизни.
+            Названия месяцев тогда выглядели логично:
+        </p>
+
+
+
+        <ul class="months fade-in">
+            <li>
+                <span class="latin">Martius</span> — месяц Марса
+                <button onclick="speakLatin('Martius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Aprilis</span> — «открывать», месяц распускания
+                <button onclick="speakLatin('Aprilis')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Maius</span> — Майя, рост и плодородие
+                <button onclick="speakLatin('Maius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Junius</span> — Юнона, порядок и брак
+                <button onclick="speakLatin('Junius')">🔊</button>
+            </li>
+        </ul>
+
+        <p>А дальше у римлян включился режим бухгалтерии:</p>
+        <ul class="months fade-in">
+            <li>
+                <span class="latin">Quintilis</span> — пятый
+                <button onclick="speakLatin('Quintilis')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Sextilis</span> — шестой
+                <button onclick="speakLatin('Sextilis')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">September</span> — седьмой
+                <button onclick="speakLatin('September')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">October</span> — восьмой
+                <button onclick="speakLatin('October')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">November</span> — девятый
+                <button onclick="speakLatin('November')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">December</span> — десятый
+                <button onclick="speakLatin('December')">🔊</button>
+            </li>
+        </ul>
+
+        <p>И всё это работало. Несколько веков.</p>
+
+        <div class="divider"></div>
+
+        <h2 class="fade-in">Как январь устроил переворот</h2>
+
+        <p class="fade-in">
+            Перелом случился в 153 году до н.э. со вторым восстанием племён кельтиберов в Испании. Это были свободный
+            союз кельтских племен, проживавших в восточной части центральной Испании.
+        </p>
+
+        <p class="fade-in">По итогам первой Кельтиберской войны стало понятно что с управлением в римской армии есть
+            проблема. Каждый новый консул избирался в начале марта и должен был:</p>
+
+        <ul>
+            <li>Совершить жертвоприношение в Храме</li>
+            <li>Утвердить в Совете свой штат и бюджет</li>
+            <li>Организовать Латинский фестиваль</li>
+            <li>Провести набор из граждан для пополнения войск</li>
+            <li>Закупится лошадьми оружием и провиантом</li>
+            <li>Со всем войском переплыть Средиземное море и сделать марш бросок по Испании до линии фронта</li>
+        </ul>
+
+        <p class="fade-in">Пока все это успевали сделать только к середине лета. А зимой надо было где-нибудь
+            окапываться до весны и ждать следующего консула и новую компанию. </p>
+
+        <p class="fade-in">Сенат сказал:</p>
+
+        <blockquote class="fade-in">
+            Ладно. Пусть консулы вступают в должность <strong>1 января</strong>
+        </blockquote>
+
+        <p>Временная мера. На пару лет. </p>
+
+        <p>И вот тут календарь поплыл. Все государственные циклы были завязаны на консулов: налоги, суды,
+            договоры, присяги. Если консулы с января — значит, и год с января. </p>
+
+        <p class="fade-in">Официально начало года сместилось. Но названия месяцев остались. Потому что переименовывать
+            месяца — это ад. Документы, традиции, привычки, религия. Проще жить с абсурдом, чем чинить его.</p>
+
+        <p class="fade-in">Так <strong>сентябрь</strong> стал девятым, <strong>октябрь</strong> — десятым, и никто уже
+            не помнил, что когда-то всё было иначе.</p>
+
+        <div class="divider"></div>
+
+        <h2 class="fade-in">Последний штрих: императоры и тщеславие</h2>
+
+        <img src="img/Caesar.jpeg" alt="Julius Caesar" class="image">
+        <img src="img/Augustus.jpeg" alt="Augustus" class="image">
+
+        <p class="fade-in">
+            Позже Юлий Цезарь реформировал календарь, а благодарные потомки переименовали (посмертно кстати)</p>
+        <p>
+            <span class="latin">Quintilis</span><button onclick="speakLatin('Quintilis')">🔊</button>
+            &nbsp;в&nbsp;
+            <span class="latin">Julius</span><button onclick="speakLatin('Julius')">🔊</button>
+            (июль)
+        </p>
+        <p>потому что он ввел новый календарь , названный Юлианским. А</p>
+        <p>
+            <span class="latin">Sextilis</span><button onclick="speakLatin('Sextilis')">🔊</button>
+            в
+            <span class="latin">Augustus</span><button onclick="speakLatin('Augustus')">🔊</button>
+            (август)
+        </p>
+        <p>
+            потому что он был первым императором.
+        </p>
+
+        <p class="fade-in">
+            Остальные императоры тоже пытались. Один даже переименовал все месяца в честь своих многочисленных титулов и
+            имен. Но
+            они заканчивали правление как тираны и подвергались «проклятию памяти». После их смерти все их указы
+            аннулировались, статуи разрушались, а названия месяцев возвращались к привычным.
+        </p>
+
+        <p class="fade-in">
+            Только два императора вырвали себе кусочки вечности. Так мы до сих пор живём внутри решения, принятого ради
+            срочной войны две тысячи лет назад. И это так иронично.
+        </p>
+
+        <h3 style="margin-top:60px; font-family:'Cormorant Garamond', serif; font-size:28px; color:var(--accent);">
+            Так сложился вот такой список
+        </h3>
+
+        <ul class="months">
+
+            <li>
+                <span class="latin">Ianuarius</span> — месяц Януса
+                <button onclick="speakLatin('Ianuarius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Februarius</span> — месяц очищения
+                <button onclick="speakLatin('Februarius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Martius</span> — месяц Марса
+                <button onclick="speakLatin('Martius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Aprilis</span> — «открывать»
+                <button onclick="speakLatin('Aprilis')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Maius</span> — Майя
+                <button onclick="speakLatin('Maius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Junius</span> — Юнона
+                <button onclick="speakLatin('Junius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">Julius</span> — в честь Цезаря
+                <button onclick="speakLatin('Julius')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin ">Augustus</span> — в честь Августа
+                <button onclick="speakLatin('Augustus')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">September</span> — «седьмой» (но девятый по счету)
+                <button onclick="speakLatin('September')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">October</span> — «восьмой» (но десятый по счету)
+                <button onclick="speakLatin('October')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">November</span> — «девятый» (но одиннадцатый по счету)
+                <button onclick="speakLatin('November')">🔊</button>
+            </li>
+
+            <li>
+                <span class="latin">December</span> — «десятый» (но двенадцатый по счету)
+                <button onclick="speakLatin('December')">🔊</button>
+            </li>
+
+        </ul>
+        <div class="divider"></div>
+
+        <h2 class="fade-in">Рождество и смысл</h2>
+
+        <p class="fade-in">
+            Чуть позже когда христианская церковь вводила рождество , она специально не стала ставить его на начало
+            года. Она выбрала День зимнего солнцестояния - <span class="latin">Dies Natalis Solis Invicti</span><button
+                onclick="speakLatin('Dies Natalis Solis Invicti')">🔊</button> — «рождение
+            Непобедимого Солнца». Христианская идея «Христос — свет миру» ложилась на эту дату, гораздо лучше чем
+            административное 1
+            января (день вступления консулов в должность).
+        </p>
+
+        <p class="fade-in">
+            Так <strong>25 декабря</strong> стало рождеством а <strong>1 января</strong> стал день Обрезания Иисуса (на
+            8-й день после рождения, по
+            иудейскому закону). То есть церковный календарь специально развёл эти даты по разным смыслам, чтобы сделать
+            рождество церковным а не светским праздником.
+        </p>
+
+    </div>
+
+    <script>
+
+        const elements = document.querySelectorAll('.fade-in');
+
+        function reveal() {
+            elements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+    </script>
+
+</body>
+
+<script>
+    function speakLatin(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+
+        utterance.lang = "la"; // латинский
+
+        const voices = speechSynthesis.getVoices();
+
+        // пытаемся найти голос с поддержкой латиницы
+        const latinVoice = voices.find(voice => voice.lang.startsWith('it') || voice.lang.startsWith('es'));
+
+        if (latinVoice) {
+            utterance.voice = latinVoice;
+        }
+
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+
+        speechSynthesis.speak(utterance);
+    }
+
+    // нужно для корректной загрузки голосов
+    speechSynthesis.onvoiceschanged = () => { };
+</script>
+
+</html>
